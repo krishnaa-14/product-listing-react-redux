@@ -8,6 +8,7 @@ import { addProduct } from '../slices/ProductSlice';
 const ProductList = () => {
 
     const products = useSelector((store) => store.products);
+    const cartProducts = useSelector((store) => store.cart);
 
     const dispatch = useDispatch();
 
@@ -19,13 +20,17 @@ const ProductList = () => {
     }
 
     useEffect(() => {
+
+        if(products.length > 0) {
+            return;
+        }
+
         fetchProducts();
     }, [])
 
     return (
         <div>
             {/*<h1 className = "font-bold text-3xl text-center mt-5"> Products </h1> */}
-            {console.log("products " +products)}
             <div className = "mt-5 flex flex-row flex-wrap justify-center">
                 {products.map((product) => {
                     return (
@@ -34,6 +39,7 @@ const ProductList = () => {
                             price = {product.price}
                             imageURL = {product.image}
                             productId = {product.id}
+                            key = {product.id}
                         />
                     )
                 })}
