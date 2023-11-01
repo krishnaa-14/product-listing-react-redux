@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CategoryCarousal from "./components/CategoryCarousal";
 import CategoryList from "./components/CategoryList";
 import SearchList from "./components/SearchList";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
           <Route path = "/category/:category" element = {<CategoryList />} />
           <Route path = "/search" element = {<SearchList />} />
         </Routes>
+        <Footer />
       </Router> 
     </Provider>
   )
