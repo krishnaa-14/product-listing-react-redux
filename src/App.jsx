@@ -6,6 +6,7 @@ import Cart from './components/Cart';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CategoryCarousal from "./components/CategoryCarousal";
 import CategoryList from "./components/CategoryList";
+import SearchList from "./components/SearchList";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path = "/" element = {<ProductList />} />
           <Route path = "/cart" element = {<Cart />} />
           <Route path = "/category/:category" element = {<CategoryList />} />
+          <Route path = "/search" element = {<SearchList />} />
         </Routes>
       </Router> 
     </Provider>

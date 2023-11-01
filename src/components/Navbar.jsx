@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const NavBar = () => {
 
@@ -12,6 +13,9 @@ const NavBar = () => {
                 Products
             </div>
             </Link>
+
+            <SearchBar > </SearchBar>
+
             <Link to = "/cart">
             <div className = "mr-20 font-semibold hover:cursor-pointer hover:underline">
                 Cart Items - {cartItemsCount}
