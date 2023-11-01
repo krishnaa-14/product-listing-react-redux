@@ -2,7 +2,7 @@ import { addProductToCart, removeProductFromCart } from "../slices/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 
-const ProductItem = ({title, price, imageURL, productId}) => {
+const ProductItem = ({title, price, imageURL, productId, category}) => {
     
     const cartProducts = useSelector((store) => store.cart);
     const dispatch = useDispatch();
@@ -20,7 +20,12 @@ const ProductItem = ({title, price, imageURL, productId}) => {
     }
     
     return (
-        <div className = "w-60 p-8 m-8 h-50 bg-white rounded shadow h-full">
+        <div className = "relative w-60 p-8 m-8 h-50 bg-white rounded shadow h-full">
+
+            <div className="absolute top-0 left-[-10px] z-10 bg-gray-300 p-2 rounded-tl rounded-br">
+                {category}
+            </div>
+
             <img src = {imageURL} className = "w-full h-40 object-fit mt-5" alt = "product image" />
             <div className = "mt-2">
                 <h1 className = "font-bold text-sm mb-4"> {title} </h1>

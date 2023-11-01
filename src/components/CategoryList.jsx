@@ -36,6 +36,7 @@ const CategoryList = () => {
                             imageURL = {product.thumbnail}
                             productId = {product.id}
                             key = {product.id}
+                            category={product.category}
                         />
                     )
                 })}

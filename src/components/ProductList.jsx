@@ -44,6 +44,7 @@ const ProductList = () => {
                             imageURL = {product.image}
                             productId = {product.id}
                             key = {product.id}
+                            category = {product.category}
                         />
                     )
                 })}
