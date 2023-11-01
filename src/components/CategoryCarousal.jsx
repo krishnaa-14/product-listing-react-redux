@@ -23,7 +23,7 @@ const CategoryCarousal = () => {
             <div className = "mt-5 flex flex-row flex-wrap p-3 justify-center"> 
                 {
                     categories.length > 0 && categories.map((category, index) => (
-                        <Link to = {`/category/${category}`}> <h1 key = {index} className = "m-3 hover:underline"> {category} </h1> </Link>
+                        <Link key = {index} to = {`/category/${category}`}> <h1 key = {index} className = "m-3 hover:underline"> {category} </h1> </Link>
                     ))
                 }
             </div>
