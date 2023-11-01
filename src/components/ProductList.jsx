@@ -3,24 +3,24 @@ import ProductItem from './ProductItem';
 import { useSelector } from 'react-redux';
 import { useDispatch } from'react-redux';
 import { addProduct } from '../slices/ProductSlice';
-import ProductsLoader from './ProductsLoader';
+// import ProductsLoader from './ProductsLoader';
 
 
 const ProductList = () => {
 
     const products = useSelector((store) => store.products);
     const cartProducts = useSelector((store) => store.cart);
-    const [loading, setLoading] = useState(true);
+    //const [loading, setLoading] = useState(true);
 
     const dispatch = useDispatch();
 
     const fetchProducts = async () => {
-        setLoading(true);
+        // setLoading(true);
         const data = await fetch('https://fakestoreapi.com/products');
         const json = await data.json();
     
         dispatch(addProduct(json));
-        setLoading(false);
+        // setLoading(false);
     }
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const ProductList = () => {
     }, [])
 
     return (
-        loading ? <ProductsLoader /> : <div>
+        <div>
             {/*<h1 className = "font-bold text-3xl text-center mt-5"> Products </h1> */}
             <div className = "mt-5 flex flex-row flex-wrap justify-center">
                 {products.map((product) => {
