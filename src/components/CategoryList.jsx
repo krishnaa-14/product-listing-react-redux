@@ -11,6 +11,7 @@ const CategoryList = () => {
     const dispatch = useDispatch();
 
     const products = useSelector((store) => store.category);
+    const filterStatus = useSelector((store) => store.filterStatus);
 
     const getProductsByCategory = async () => {
         const data = await fetch("https://dummyjson.com/products/category/" + category + "?limit=10");
@@ -22,6 +23,10 @@ const CategoryList = () => {
     useEffect(() => {
         getProductsByCategory();
     }, [category])
+
+    useEffect(() => {
+        dispatch(addProductsToCategory(products, filterStatus));
+    }, [filterStatus])
 
     return (
         <div>

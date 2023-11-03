@@ -1,6 +1,6 @@
-import { useSelector } from 'react-redux';
-import ProductItem
- from './ProductItem';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import ProductItem from './ProductItem';
 const SearchList = () => {
 
     const searchProducts = useSelector((store) => store.search);

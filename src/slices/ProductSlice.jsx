@@ -6,7 +6,7 @@ const productSlice = createSlice({
     reducers : {
         addProduct : (state, action) => {
             console.log(action.payload);
-            return [...state, ...action.payload]
+            return action.payload
         }
     }
 })
