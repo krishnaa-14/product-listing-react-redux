@@ -19,7 +19,7 @@ const CategoryCarousal = () => {
     }, [])
 
     return (
-        isLoading ? <h1 className = "font-bold text-center mt-8"> Loading.... </h1> : <div>
+        isLoading ? <h1 className = "font-bold text-center mt-32"> Loading.... </h1> : <div>
             <div className = "mt-5 flex flex-row flex-wrap p-3 justify-center"> 
                 {
                     categories.length > 0 && categories.map((category, index) => (

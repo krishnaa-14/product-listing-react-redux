@@ -22,7 +22,7 @@ const ProductItem = ({title, price, imageURL, productId, category}) => {
     return (
         <div className = "relative w-60 p-8 m-8 h-50 bg-white rounded shadow h-full">
 
-            <div className="absolute top-0 left-[-10px] z-10 bg-gray-300 p-2 rounded-tl rounded-br">
+            <div className="absolute top-0 left-[-10px] z-2 bg-gray-300 p-2 rounded-tl rounded-br">
                 {category}
             </div>
 

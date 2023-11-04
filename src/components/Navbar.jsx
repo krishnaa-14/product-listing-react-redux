@@ -3,19 +3,26 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { useState } from 'react';
 import FilterDropdown from "./FilterDropdown";
+import { Menu } from 'lucide-react';
+import Sidebar from "./Sidebar";
 
 const NavBar = () => {
 
     const cartItems = useSelector(store => store.cart)
     const cartItemsCount = cartItems.length;
     const [showFilterDropdown, setShowFilterDropdown] = useState(false);
+    const [isSideBarOpen, setisSideBarOpen] = useState(false);
 
     return (
         <div className = "flex flex-row justify-between items-center h-20 w-full bg-slate-300">
-            <Link to = "/"><div className = "ml-20 font-semibold hover:cursor-pointer hover:underline">
-                Products
+            <div className = "flex flex-row ml-20">
+                <Menu onClick={() => setisSideBarOpen(!isSideBarOpen)}/>
+                {isSideBarOpen && <Sidebar> </Sidebar>}
+                <Link to = "/"><div className = " ml-2 font-semibold hover:cursor-pointer hover:underline">
+                    Products
+                </div>
+                </Link>
             </div>
-            </Link>
 
             <SearchBar > </SearchBar>
 
