@@ -14,7 +14,7 @@ const NavBar = () => {
     const [isSideBarOpen, setisSideBarOpen] = useState(false);
 
     return (
-        <div className = "flex flex-row justify-between items-center h-20 w-full bg-slate-300">
+        <div className = "fixed top-0 z-[99999] flex flex-row justify-between items-center h-20 w-full bg-slate-300">
             <div className = "flex flex-row ml-20">
                 <Menu onClick={() => setisSideBarOpen(!isSideBarOpen)}/>
                 {isSideBarOpen && <Sidebar> </Sidebar>}
