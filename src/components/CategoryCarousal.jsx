@@ -20,7 +20,7 @@ const CategoryCarousal = () => {
 
     return (
         isLoading ? <h1 className = "font-bold text-center mt-32"> Loading.... </h1> : <div>
-            <div className = "mt-5 flex flex-row flex-wrap p-3 justify-center"> 
+            <div className = "mt-16 flex flex-row flex-wrap p-3 pb-0 justify-center"> 
                 {
                     categories.length > 0 && categories.map((category, index) => (
                         <Link key = {index} to = {`/category/${category}`}> <h1 key = {index} className = "m-3 hover:underline"> {category} </h1> </Link>
